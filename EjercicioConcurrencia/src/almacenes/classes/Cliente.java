@@ -15,18 +15,17 @@ public class Cliente implements Runnable {
   public void run(){
     try{
       while(intentos < 10) {
-        if(almacen.ComprobarApuertura()){
-          almacen.EntradaCliente();
-          if(!almacen.AdquirirProducto(clientId)){
-            System.out.println("El cliente " + clientId + " ha conseguido entrar pero ya no quedaban productos.");
-          }
+        if(almacen.getEstadoApertura()){
+          almacen.Entrada();
+          almacen.AdquirirProducto(clientId);
           break;
         }
 
         intentos ++;
         if(intentos == 10){
-          System.out.println("El cliente " + clientId + " ha fallado demasiados intentos.");
+          System.out.println("  - El cliente (" + clientId + ") se ha cansado de esperar.");
         }
+
         Thread.sleep(1000);
       }
     }catch (Exception ex){

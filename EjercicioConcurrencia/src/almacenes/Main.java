@@ -5,8 +5,8 @@ import almacenes.classes.Cliente;
 
 public class Main {
   public static void main(String[] args){
-    int clientes = 100;
-    int productos = 3;
+    int clientes = 300;
+    int productos = 100;
     var almacen = new Almacen(productos);
 
     try{
