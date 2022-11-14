@@ -19,7 +19,7 @@ public class Almacen {
 
   public synchronized void Entrada() throws InterruptedException {
       setEstaddoApertura(false);
-      Thread.sleep(2000);
+      Thread.sleep(1000);
       setEstaddoApertura(true);
   }
 

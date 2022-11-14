@@ -23,7 +23,7 @@ public class Cliente implements Runnable {
 
         intentos ++;
         if(intentos == 10){
-          System.out.println("  - El cliente (" + clientId + ") se ha cansado de esperar.");
+          System.out.println("  - El cliente (" + clientId + ") ha superado los intentos máximos");
         }
 
         Thread.sleep(1000);
