@@ -1,4 +1,4 @@
-package prodcon.classes;
+package semaforos.classes;
 
 public class Consumidor extends Thread {
   private Almacen almacen;

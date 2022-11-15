@@ -1,4 +1,4 @@
-package prodcon.classes;
+package semaforos.classes;
 
 import java.util.concurrent.Semaphore;
 
@@ -18,7 +18,7 @@ public class Almacen {
       System.out.println(nombreProductor + " almacena un producto. " + "Almacén con " + producto + (producto > 1 ? " productos." : " producto."));
       mutex.release();
 
-      Thread.sleep(500);
+      Thread.sleep(1000);
 
     } catch (InterruptedException ex) {
       System.out.println(ex.getMessage());
@@ -39,7 +39,7 @@ public class Almacen {
               + "Almacén con " + producto + (producto > 1 ? " productos." : " producto."));
       mutex.release();
 
-      Thread.sleep(500);
+      Thread.sleep(1000);
     } catch (InterruptedException ex) {
       System.out.println(ex.getMessage());
     } finally {

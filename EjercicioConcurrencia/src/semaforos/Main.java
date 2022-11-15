@@ -1,13 +1,13 @@
-package prodcon;
+package semaforos;
 
-import prodcon.classes.Almacen;
-import prodcon.classes.Consumidor;
-import prodcon.classes.Productor;
+import semaforos.classes.Almacen;
+import semaforos.classes.Consumidor;
+import semaforos.classes.Productor;
 
 public class Main {
   public static void main(String[] args){
-    final int PRODUCTOR = 3;
-    final int CONSUMIDOR = 10;
+    final int PRODUCTOR = 1;
+    final int CONSUMIDOR = 2;
 
     Almacen almacen = new Almacen();
 

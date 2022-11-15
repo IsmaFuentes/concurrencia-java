@@ -1,4 +1,4 @@
-package prodcon.classes;
+package semaforos.classes;
 
 public class Productor extends Thread {
   private Almacen almacen;
@@ -10,7 +10,7 @@ public class Productor extends Thread {
 
   @Override
   public void run() {
-    while (true) {
+    while(true) {
       almacen.producir(this.getName());
     }
   }
