@@ -10,7 +10,7 @@ public class Productor extends Thread {
 
   @Override
   public void run() {
-    while(true) {
+    while(true){
       almacen.producir(this.getName());
     }
   }

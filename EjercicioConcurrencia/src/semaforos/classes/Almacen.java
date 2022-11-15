@@ -9,13 +9,13 @@ public class Almacen {
   private Semaphore consumidor = new Semaphore(0);
   private Semaphore mutex = new Semaphore(1);
 
-  public void producir(String nombreProductor) {
-    System.out.println(nombreProductor + " intentando almacenar un producto");
+  public void producir(String nombre) {
+    System.out.println(nombre + " intentando almacenar un producto");
     try {
       productor.acquire();
       mutex.acquire();
       producto++;
-      System.out.println(nombreProductor + " almacena un producto. " + "Almacén con " + producto + (producto > 1 ? " productos." : " producto."));
+      System.out.println(nombre + " almacena un producto. " + "Almacén con " + producto + (producto > 1 ? " productos." : " producto."));
       mutex.release();
 
       Thread.sleep(1000);
@@ -28,15 +28,14 @@ public class Almacen {
 
   }
 
-  public void consumir(String nombreConsumidor) {
-    System.out.println(nombreConsumidor + " intentando retirar un producto");
+  public void consumir(String nombre) {
+    System.out.println(nombre + " intentando retirar un producto");
     try {
       consumidor.acquire();
       mutex.acquire();
 
       producto--;
-      System.out.println(nombreConsumidor + " retira un producto. "
-              + "Almacén con " + producto + (producto > 1 ? " productos." : " producto."));
+      System.out.println(nombre + " retira un producto. " + "Almacén con " + producto + (producto > 1 ? " productos." : " producto."));
       mutex.release();
 
       Thread.sleep(1000);
